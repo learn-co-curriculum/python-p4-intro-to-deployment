@@ -1,4 +1,4 @@
-# Intro to Deploying
+# Intro to Deployment
 
 ## Learning Goals
 
@@ -65,8 +65,8 @@ Static websites are still quite common on the web; but there's also a large port
 of the web that is [**dynamic**][dynamic web page]. With dynamic pages, the content
 returned from an HTTP request isn't derived from just an HTML file, but instead is
 processed by some code running on the server before it's sent back to the client.
-All Rails applications are **dynamic**, since every request needs to be processed
-by Rails in order to determine the correct response.
+All Flask applications are **dynamic**, since every request needs to be processed
+by Flask in order to determine the correct response.
 
 [dynamic web page]: https://en.wikipedia.org/wiki/Dynamic_web_page
 
@@ -74,6 +74,8 @@ by Rails in order to determine the correct response.
 
 Since hosting a server for dynamic websites is a bit more complicated, let's
 discuss some things a dynamic server needs in order to do its job.
+
+***
 
 ## Application Environment
 
