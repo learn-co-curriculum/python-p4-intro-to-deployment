@@ -10,8 +10,19 @@
 
 ## Key Vocab
 
-- **Deployment**:
-- **Developer Operations (DevOps)**:
+- **Deployment**: the processes that make an application available for its
+  intended use. For web applications, this means moving the application to a
+  platform that supports requests from the internet.
+- **Developer Operations (DevOps)**: the practices and tools that improve a
+  team's ability to develop and deploy applications quickly.
+- **PostgreSQL**: an open-source relational database system that provides more
+  SQL functionality than SQLite. Unlike SQLite, its data is stored on a server
+  rather than in files.
+- **Platform as a Service (PaaS)**: a development and deployment platform that
+  exists on a wide range of servers with different functionality. PaaS solutions
+  reduce maintenance time for a software development team, but can increase
+  cost. Some PaaS solutions, such as Render, provide free tiers for small
+  applications.
 
 ***
 
@@ -147,13 +158,15 @@ tradeoffs. For Rails in particular, a few popular choices are:
 - [Heroku][heroku]
 - [Amazon Web Services (AWS)][aws]
 - [Digital Ocean][digital ocean]
+- [Render][render]
 
 [heroku]: https://www.heroku.com/about
 [aws]: https://aws.amazon.com/
 [digital ocean]: https://www.digitalocean.com/
+[render]: https://render.com/
 
 One thing these services all have in common: they all have the ability to easily
-configure an environment to run our Rails applications in. These services own
+configure an environment to run our Flask applications in. These services own
 the hardware (the physical servers and networking infrastructure) that your code
 will run on, but they also have configurable [**containers**][containers] with
 resources dedicated to run your code.
@@ -163,18 +176,18 @@ resources dedicated to run your code.
 These containers are what makes it possible to quickly and easily set up a new
 production environment that has all the functionality needed to run your site:
 
-- **OS**: Typically Linux. Applications like Rails work well across platforms,
+- **OS**: Typically Linux. Applications like Flask work well across platforms,
   so even if you're using a different OS in development, deploying to a server
   that runs Linux works just fine!
-- **Ruby**: You should use the exact same version of Ruby in development and in
-  production. Since new Ruby versions have new features, as well as fixing
+- **Python**: You should use the exact same version of Python in development and
+  in production. Since new Python versions have new features, as well as fixing
   security issues in older versions, it's critical to use the same version in
   both environments.
 - **NodeJS**: It's important to use the same NodeJS version in both environments
-  for the same reasons listed for Ruby.
+  for the same reasons listed for Python.
 - **Database**: While it's possible to use different databases in a development
   and production environment, it's generally not a good idea to do so: there are
-  some differences in how (for example) SQLite and Postgresql interpret
+  some differences in how (for example) SQLite and PostgreSQL interpret
   different SQL commands and what features are available in both, so it's
   considered a best practice to use the same database in development and in
   production.
@@ -191,23 +204,24 @@ deploying your application, such as:
 - **Performance**: Does my application need to handle a lot of traffic? Be optimized
   for video processing? Store a lot of files? Handle large database tables?
 
-For now, since we're deploying our very first Rails projects, we're going to
-prioritize **cost** and **ease of use** to decide on a platform, and use Heroku
+For now, since we're deploying our very first Flask projects, we're going to
+prioritize **cost** and **ease of use** to decide on a platform, and use Render
 for deploying in the coming lessons.
 
-[Heroku][heroku] is first and foremost a Platform as a Service (PaaS), which
+[Render][render] is first and foremost a Platform as a Service (PaaS), which
 means they manage the hardware your code runs on as well as the software
 environment, with an aim of making it as simple as possible to take the code
-from your machine and run it on theirs. Heroku also has a free tier for
+from your machine and run it on theirs. Render also has a free tier for
 developers to try out the service at no cost.
 
-[AWS's Elastic Beanstalk][elastic beanstalk] and
-[Digital Ocean's App Platform][app platform] are both Platform as a Service
+[Heroku][heroku flask], [AWS's Elastic Beanstalk][elastic beanstalk] and
+[Digital Ocean's App Platform][app platform] are also Platform as a Service
 options as well, so you're welcome to try them out for future projects if you're
 interested in exploring other options.
 
-[elastic beanstalk]: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ruby-rails-tutorial.html
-[app platform]: https://docs.digitalocean.com/products/app-platform/languages-frameworks/ruby-on-rails/
+[heroku flask]: https://devcenter.heroku.com/categories/python-support
+[elastic beanstalk]: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+[app platform]: https://docs.digitalocean.com/products/app-platform/reference/buildpacks/python/
 
 The downside to PaaS options is that they tend to cost more in the long run as
 your application scales up, since you're not only paying for the hardware your
@@ -216,9 +230,11 @@ also tend to make it more challenging to fine-tune the environment in a way that
 is optimal for _your_ specific application, rather than _all_ applications
 running on their service.
 
-The upside is that compared to handling that configuration ourselves, using Heroku
+The upside is that compared to handling that configuration ourselves, using Render
 will make it much easier to get our app up and running in a production environment
 on a server.
+
+***
 
 ## Conclusion
 
@@ -232,11 +248,37 @@ In the coming lessons, we'll go through that deployment process with a couple of
 applications of varying complexity so you can build the confidence to deploy your
 own projects independently.
 
+***
+
 ## Check For Understanding
 
 Before you move on, make sure you can answer the following questions:
 
-1. How does having an understanding of the deployment process help you as a
-   developer?
-2. What are the advantages and disadvantages of using a Platform as a Service
-   (PAAS) to deploy a Rails app?
+<details>
+  <summary>
+    <em>How does having an understanding of the deployment process help you as a
+        developer?</code></em>
+  </summary>
+
+  <h3>Deployment is necessary to make applications available to users.</h3>
+  <p>As fun as local development and seed data can be, they do not allow others
+     to use your product and view data that reflects its use.</p>
+</details>
+<br/>
+
+<details>
+  <summary>
+    <em>What are the advantages and disadvantages of using a Platform as a Service
+        (PaaS) to deploy a Flask app?</code></em>
+  </summary>
+
+  <h3>PaaS solutions reduce maintenance time and streamline deployment.</h3>
+  <h3>PaaS solutions may limit custom functionality and can get expensive.</h3>
+</details>
+<br/>
+
+## Resources
+
+[Render][render]
+[Deploying software - IBM](https://www.ibm.com/docs/en/zos/2.4.0?topic=task-deploying-software)
+[What is PaaS? - Azure](https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-paas/)
