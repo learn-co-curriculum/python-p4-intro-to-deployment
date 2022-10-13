@@ -87,10 +87,10 @@ Broadly speaking, application environments are split into three categories:
 - **Development**: When you're working on your application locally, running the
   code on your personal computer, it's running in the **development**
   environment. In a development environment, you should be able to easily use
-  debugging tools (like `byebug`), and code analysis tools (like ESLint, which
+  debugging tools (like `ipdb`), and code analysis tools (like ESLint, which
   warns you when you're using React incorrectly). You should be able to quickly
   see the result of adding new code and how that affects your application.
-- **Testing**: When your test runner (like RSpec or Jest) is running, it runs in
+- **Testing**: When your test runner (like pytest or Jest) is running, it runs in
   a **testing** environment. In this environment, your code should run as
   quickly as possible so that you can get rapid feedback on your application by
   running your test suite. It should also be as close as possible to your
@@ -107,34 +107,36 @@ Broadly speaking, application environments are split into three categories:
 > Other environments you may use when building an application are a QA (quality
 > assurance, for manual testing of features) environment and a staging
 > environment (a preview of the production environment, usually used as the last
-> stage before deploying a new feature).
+> stage before deploying a new feature). These are standard for larger teams.
 
-Take a moment to think about all the things that are required to run a Rails
+Take a moment to think about all the things that are required to run a Flask
 application in your local development environment. When you're working on a lab,
-what setup is needed so that you can type `rails s` in the terminal, and view
-your website in the browser?
+what setup is needed so that you can type `python app.py` in the terminal, and
+view your website in the browser?
 
 For starters, there's your _environment setup_: you could be running on OSX, or
-WSL, or Linux; you'll need to have a recent version of Ruby installed; you'll
+WSL, or Linux; you'll need to have a recent version of Python installed; you'll
 need Git for version control; and a few other system dependencies.
 
 There are also all of your _application dependencies_: the code specific to
-your Rails app that needs to run. That includes the Rails gem itself as well
-as all the other gems in your Gemfile.
+your Flask app that needs to run. That includes the Flask library itself as well
+as all the other libraries in your Pipfile.
 
 You'll also need some kind of _database_ to persist all your data. It's helpful
 to think of the database in isolation from the rest of your application, as a
-kind of resource that's available to your Rails app; ideally, even if your Rails
+kind of resource that's available to your Flask app; ideally, even if your Flask
 app goes down for some reason, your database shouldn't go down with it!
 
 > A note on databases: for the labs in this phase, we've been using SQLite as a
 > lightweight database. It's great for quick development, but it doesn't scale
-> well to larger applications. We'll be using Postgresql for our database moving
+> well to larger applications. We'll be using PostgreSQL for our database moving
 > forward. More on that later!
 
 Since all of these elements are required in order to run our application,
 whatever system we choose to deploy our code on will need to be able to handle a
 similar environment setup. Let's explore some options.
+
+***
 
 ## Deploying Options
 
