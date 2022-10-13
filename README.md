@@ -279,6 +279,6 @@ Before you move on, make sure you can answer the following questions:
 
 ## Resources
 
-[Render][render]
-[Deploying software - IBM](https://www.ibm.com/docs/en/zos/2.4.0?topic=task-deploying-software)
-[What is PaaS? - Azure](https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-paas/)
+- [Render][render]
+- [Deploying software - IBM](https://www.ibm.com/docs/en/zos/2.4.0?topic=task-deploying-software)
+- [What is PaaS? - Azure](https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-paas/)
