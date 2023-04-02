@@ -153,7 +153,7 @@ similar environment setup. Let's explore some options.
 
 When it comes to deciding which platform to use to host our deployed
 applications, there are a number of options, each of which comes with some
-tradeoffs. For Rails in particular, a few popular choices are:
+tradeoffs. For Flask in particular, a few popular choices are:
 
 - [Heroku][heroku]
 - [Amazon Web Services (AWS)][aws]
