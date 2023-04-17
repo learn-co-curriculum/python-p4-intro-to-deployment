@@ -81,7 +81,7 @@ by Flask in order to determine the correct response.
 
 [dynamic web page]: https://en.wikipedia.org/wiki/Dynamic_web_page
 
-![dynamic server diagram](https://curriculum-content.s3.amazonaws.com/phase-4/phase-4-intro-to-deploying/dynamic-server.png)
+![dynamic server diagram](https://curriculum-content.s3.amazonaws.com/6130/Intro-to-Deployment/deployment_drawing_final.png)
 
 Since hosting a server for dynamic websites is a bit more complicated, let's
 discuss some things a dynamic server needs in order to do its job.
